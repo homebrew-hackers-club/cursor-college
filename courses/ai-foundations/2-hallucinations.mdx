@@ -41,17 +41,22 @@ Let me show you some real examples of hallucination developers encounter.
 The first is a seemingly correct but non-existent import from a package.
 
 
+```
 // AI suggests:
 import { debounce } from "react";
 // Reality: debounce isn't exported from React!
 // You need lodash or to write your own
+```
+
 The second is a convincing looking, but fake method on a class:
 
-
+```
 # AI suggests:
 df.remove_outliers(threshold=3)
 # Reality: pandas DataFrames don't have this method
 # You need to implement outlier removal yourself
+```
+
 And finally, an almost right configuration file:
 
 ```
