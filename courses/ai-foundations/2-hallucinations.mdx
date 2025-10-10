@@ -9,7 +9,7 @@ Now that you understand how AI models work, let's talk about something that trip
 
 Hallucination is when an AI model confidently generates information that seems plausible but is actually incorrect. It's like when someone tries to bluff their way through a conversation about a topic they don't really know.
 
-### Why do models hallucinate?
+## Why do models hallucinate?
 
 
 Remember how we said AI models predict the next token based on patterns they've learned? Well, sometimes those patterns lead them astray.
@@ -33,28 +33,31 @@ Ask for three more alternatives and pick one.
 Check
 Reset
 
-# Hallucination in the wild
+## Hallucination in the wild
 
 
 Let me show you some real examples of hallucination developers encounter.
 
 The first is a seemingly correct but non-existent import from a package.
 
-
+```js
 // AI suggests:
 import { debounce } from "react";
 // Reality: debounce isn't exported from React!
 // You need lodash or to write your own
+```
 The second is a convincing looking, but fake method on a class:
 
 
+```js
 # AI suggests:
 df.remove_outliers(threshold=3)
 # Reality: pandas DataFrames don't have this method
 # You need to implement outlier removal yourself
+```
 And finally, an almost right configuration file:
 
-```
+```json
 // AI suggests for package.json:
 {
   "type": "module",
@@ -69,8 +72,7 @@ It’s worth being skeptical of the results you get back from the model, and ver
 
 For example, inside Cursor, an incorrect import statement should show an error that the import does not exist, which can then be provided back to the AI model as feedback.
 
-Other model limitations
-#
+## Other model limitations
 
 Models can also confidently suggest the wrong answer.
 

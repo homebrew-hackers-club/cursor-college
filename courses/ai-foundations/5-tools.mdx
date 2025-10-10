@@ -3,7 +3,7 @@ title: Tool Calling
 ---
 <MuxPlayer playbackId="TVEI1qteP9PzBGojxcJazbO24ipeCrwAaYERrJMIXag" />
 
-Tool Calling
+# Tool Calling
 
 Now that you understand how context works, let's explore how AI models can do more than just generate text. They can actually take actions and retrieve information dynamically through tool calling.
 
@@ -13,7 +13,7 @@ Let me give you an analogy. Imagine you're helping a friend cook dinner over the
 
 Now imagine if your friend sends you photos of their fridge contents, or if they tell you the exact temperature of their oven. Suddenly, you can give much better advice because you have access to real-time information. That's essentially what tool calling does for AI models.
 
-How tool calling works
+### How tool calling works
 
 When developers build AI applications, they can define specific "tools" that the AI model can use. These tools are like special abilities that extend what the model can do beyond just thinking and responding with text.
 
@@ -36,7 +36,7 @@ Access documentation or search the web for current information
 Check for errors by running linters or tests
 Without tools, the AI model would be limited to only the information you explicitly provide in the context. With tools, it can actively explore and interact with your codebase.
 
-What's inside a tool call?
+### What's inside a tool call?
 
 Every tool has three main components:
 
@@ -45,7 +45,7 @@ A description that tells the model when and how to use the tool
 Parameters which are the inputs the tool needs to work
 Here's an example of what a tool definition might look like:
 
-
+```json
 {
   "name": "read_file",
   "description": "Read the contents of a file from the codebase",
@@ -53,15 +53,19 @@ Here's an example of what a tool definition might look like:
     "filepath": "The path to the file to read"
   }
 }
+```
+
 When the AI model wants to use this tool, it generates a response like:
 
-
+```json
 {
   "tool": "read_file",
   "parameters": {
     "filepath": "src/components/Button.tsx"
   }
 }
+```
+
 The application then reads that file and adds the contents to the conversation context, allowing the model to understand your Button component and suggest relevant changes.
 
 Which are core parts of a tool definition?
