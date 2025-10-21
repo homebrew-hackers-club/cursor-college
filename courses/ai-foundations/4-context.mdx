@@ -18,10 +18,11 @@ Different chefs might add or modify the ingredients to their taste, and even if 
 
 This is kind of like working with AI models! Let’s look at a similar example for coding:
 
-You can have many inputs, like your current codebase and files, and a prompt to tell the AI model what you want to achieve
-You follow a plan, sometimes human generated or suggested by the model itself, which can then create a todo list and check items off as it completes tasks
-And the end, you get generated code you can apply to your project
-System and user prompts
+1. You can have many inputs, like your current codebase and files, and a prompt to tell the AI model what you want to achieve
+2. You follow a plan, sometimes human generated or suggested by the model itself, which can then create a todo list and check items off as it completes tasks
+3. And the end, you get generated code you can apply to your project
+
+## System and user prompts
 
 Your inputs, as well as the model outputs, all become part of the “context”. Think of the context like a long list, where the AI model keeps a working memory for the conversation.
 
@@ -43,16 +44,19 @@ Attached files and tool outputs
 Your API key string
 Check
 Reset
-Including context
+
+## Including context
 
 Tools like Cursor can automatically include other relevant information in the input context based on the state of your codebase. For example, your open files, the output from your terminal, linter errors, and more.
 
 For example, try the prompt below. It will include the current file we're viewing, which is the page you're reading right now.
 
-Run this prompt with
-Context
-Start
-What are some practical tips for providing better context when working with AI coding assistants?
+<Woz
+title='Recap'
+description='Run a prompt and enable tokenizer view'
+prompt='What are some tips for providing better context when working with AI coding assistants?'
+/>
+
 After sending the inputs to the model, it generates and returns some output back. For simple questions, this might just be text. For coding use cases, this could be snippets of code to apply to your codebase. Everything returned from the model is part of the output context.
 
 Your conversation may go on for many “turns” back and forth between you and the AI model. Every message in the conversation, including both inputs and outputs, is stored as part of the working memory in context.
@@ -61,9 +65,11 @@ The length of this list grows over time. This is important to note! Just like if
 
 As the conversation goes on for a while, it gets harder to remember things people might have said 3 hours ago. This is why understanding and managing context will be an important skill to learn.
 
-Context limits
+## Context limits
 
 Every AI model also has a different context limit, where it will no longer accept further messages in the conversation, so many AI tools give the user feedback on how close they are to those limits or provide ways to compress and summarize the current conversation to stay under the limit.
+
+![path dark](./assets/turns-dark.webp)
 
 How adding more turns grows the context window of a conversation
 Later on in the course, we’ll cover practical examples for how to manage context inside of Cursor. So far we’ve only talked about how we can give the model context we control, like text or images. What about if we want the model to dynamically retrieve context itself?

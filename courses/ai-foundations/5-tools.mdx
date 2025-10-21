@@ -13,7 +13,7 @@ Let me give you an analogy. Imagine you're helping a friend cook dinner over the
 
 Now imagine if your friend sends you photos of their fridge contents, or if they tell you the exact temperature of their oven. Suddenly, you can give much better advice because you have access to real-time information. That's essentially what tool calling does for AI models.
 
-### How tool calling works
+## How tool calling works
 
 When developers build AI applications, they can define specific "tools" that the AI model can use. These tools are like special abilities that extend what the model can do beyond just thinking and responding with text.
 
@@ -21,11 +21,12 @@ You've probably already used tool calling without realizing it! When you ask Cha
 
 Here's what happens under the hood:
 
-The AI model receives your request and recognizes it needs additional capabilities
-It formats a special response in JSON (a structured data format) that specifies which tool to use and what parameters to pass
-The application runs that tool and returns the results
-The AI model incorporates those results into its context and continues the conversation
-Why tools matter for coding
+1. The AI model receives your request and recognizes it needs additional capabilities
+2. It formats a special response in JSON (a structured data format) that specifies which tool to use and what parameters to pass
+3. The application runs that tool and returns the results
+4. The AI model incorporates those results into its context and continues the conversation
+
+## Why tools matter for coding
 
 For building software, tools are incredibly powerful because they let the AI model:
 
@@ -36,11 +37,11 @@ Access documentation or search the web for current information
 Check for errors by running linters or tests
 Without tools, the AI model would be limited to only the information you explicitly provide in the context. With tools, it can actively explore and interact with your codebase.
 
-### What's inside a tool call?
+## What's inside a tool call?
 
 Every tool has three main components:
 
-A name like read_file or search_web
+A name like `read_file` or `search_web`
 A description that tells the model when and how to use the tool
 Parameters which are the inputs the tool needs to work
 Here's an example of what a tool definition might look like:
@@ -80,7 +81,8 @@ Parameters schema
 Provider API key
 Check
 Reset
-The cost of tools
+
+## The cost of tools
 
 Remember how we talked about tokens and pricing? Tool calls consume tokens in two ways:
 
@@ -102,7 +104,8 @@ Tool calls are free once defined
 Streaming removes token costs
 Check
 Reset
-Beyond built-in tools
+
+## Beyond built-in tools
 
 Recently, a new standard called MCP (Model Context Protocol) was created. Think of it as a universal way for AI models to use and integrate tools across applications.
 
